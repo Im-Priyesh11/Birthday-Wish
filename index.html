@@ -1,0 +1,478 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Suyash!</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            animation: fadeIn 2s ease-in-out;
+            display: none;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin: 10px 20px;
+            line-height: 1.5;
+            animation: fadeIn 3s ease-in-out;
+            display: none;
+        }
+
+        #question-section {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        #reminder {
+            display: none;
+            font-size: 1.2em;
+            margin-top: 10px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        #image-section {
+            margin-top: 20px;
+            display: none;
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        #image-section img {
+            width: 200px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #ff6b6b;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        button:hover {
+            background-color: #ff3b3b;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .balloons {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .balloon {
+            position: absolute;
+            bottom: -150px;
+            width: 60px;
+            height: 90px;
+            background-color: red;
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .balloon:before {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            width: 2px;
+            height: 40px;
+            background-color: white;
+            transform: translateX(-50%);
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) translateX(0);
+            }
+            50% {
+                transform: translateY(-300px) translateX(-30px);
+            }
+            100% {
+                transform: translateY(-600px) translateX(30px);
+            }
+        }
+
+        .balloon:nth-child(1) {
+            left: 10%;
+            background-color: #ff6b6b;
+            animation-delay: 0s;
+        }
+        .balloon:nth-child(2) {
+            left: 30%;
+            background-color: #ffcccb;
+            animation-delay: 2s;
+        }
+        .balloon:nth-child(3) {
+            left: 50%;
+            background-color: #ffd700;
+            animation-delay: 1s;
+        }
+        .balloon:nth-child(4) {
+            left: 70%;
+            background-color: #adff2f;
+            animation-delay: 3s;
+        }
+        .balloon:nth-child(5) {
+            left: 90%;
+            background-color: #1e90ff;
+            animation-delay: 0.5s;
+        }
+
+        footer {
+            font-size: 0.9em;
+            position: fixed;
+            bottom: 10px;
+            text-align: center;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="balloons">
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+    </div>
+
+    <div id="question-section">
+        <p></p>
+        <button id="dumb-response">Click For a Surprise!</button>
+        <p id="reminder" style="display: none;">Today is your best friend Suyash's birthday! 🎉🎂 Don’t forget to make it memorable! ❤️</p>
+    </div>
+
+    <div id="image-section">
+        <p>Here’s a special picture of my best friend Suyash:</p>
+        <img src="https://i.ibb.co/Hn8cSKW/suyash.jpg" alt="Best friend Suyash" id="friend-image">
+    </div>
+
+    <h1 id="birthday-header">🎉Happy Birthday, Suyash!🎂</h1>
+    <p id="message-1">
+        You are not just my best friend, Suyash, but also someone I deeply admire and cherish. Your kindness, loyalty, and sense of humor make every day brighter.
+    </p>
+    <p id="message-2">
+        Our friendship is one of the most valuable things in my life, and I want it to last forever. Thank you for being such an incredible person, and I hope this birthday brings you all the happiness you deserve.
+    </p>
+
+    <footer>
+        Made with ❤️ by Priyesh
+    </footer>
+
+    <script>
+        const dumbButton = document.getElementById('dumb-response');
+        const reminderText = document.getElementById('reminder');
+        const imageSection = document.getElementById('image-section');
+        const birthdayHeader = document.getElementById('birthday-header');
+        const message1 = document.getElementById('message-1');
+        const message2 = document.getElementById('message-2');
+
+        dumbButton.addEventListener('click', () => {
+            reminderText.style.display = 'block';
+            dumbButton.style.display = 'none';
+            setTimeout(() => {
+                imageSection.style.display = 'block';
+                document.getElementById('friend-image').src = 'https://i.ibb.co/Hn8cSKW/suyash.jpg';
+            }, 2000);
+            setTimeout(() => {
+                birthdayHeader.style.display = 'block';
+                message1.style.display = 'block';
+                message2.style.display = 'block';
+            }, 4000);
+        });
+    </script>
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Suyash!</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            animation: fadeIn 2s ease-in-out;
+            display: none;
+            text-shadow: 0 0 15px #ff6b6b, 0 0 30px #ff6b6b, 0 0 45px #ff6b6b;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin: 10px 20px;
+            line-height: 1.5;
+            animation: fadeIn 3s ease-in-out;
+            display: none;
+        }
+
+        #question-section {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        #reminder {
+            display: none;
+            font-size: 1.2em;
+            margin-top: 10px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        #image-section {
+            margin-top: 20px;
+            display: none;
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        #image-section img {
+            width: 200px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #ff6b6b;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        button:hover {
+            background-color: #ff3b3b;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .balloons {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .balloon {
+            position: absolute;
+            bottom: -150px;
+            width: 60px;
+            height: 90px;
+            background-color: red;
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .balloon:before {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            width: 2px;
+            height: 40px;
+            background-color: white;
+            transform: translateX(-50%);
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) translateX(0);
+            }
+            50% {
+                transform: translateY(-300px) translateX(-30px);
+            }
+            100% {
+                transform: translateY(-600px) translateX(30px);
+            }
+        }
+
+        .balloon:nth-child(1) {
+            left: 10%;
+            background-color: #ff6b6b;
+            animation-delay: 0s;
+        }
+        .balloon:nth-child(2) {
+            left: 30%;
+            background-color: #ffcccb;
+            animation-delay: 2s;
+        }
+        .balloon:nth-child(3) {
+            left: 50%;
+            background-color: #ffd700;
+            animation-delay: 1s;
+        }
+        .balloon:nth-child(4) {
+            left: 70%;
+            background-color: #adff2f;
+            animation-delay: 3s;
+        }
+        .balloon:nth-child(5) {
+            left: 90%;
+            background-color: #1e90ff;
+            animation-delay: 0.5s;
+        }
+
+        .fireworks {
+            position: absolute;
+            bottom: 50px;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -2;
+        }
+
+        .firework {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 10px;
+            height: 30px;
+            background-color: #ff6b6b;
+            border-radius: 50%;
+            animation: launch 1.5s ease-in-out infinite, explode 0.8s ease-in-out infinite;
+        }
+
+        @keyframes launch {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-500px); }
+        }
+
+        @keyframes explode {
+            0% { transform: scale(1); }
+            50% { transform: scale(2); opacity: 0.7; }
+            100% { transform: scale(1); opacity: 0; }
+        }
+
+        footer {
+            font-size: 0.9em;
+            position: fixed;
+            bottom: 10px;
+            text-align: center;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="balloons">
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+    </div>
+
+    <div class="fireworks">
+        <div class="firework" style="left: 20%; animation-delay: 0s;"></div>
+        <div class="firework" style="left: 40%; animation-delay: 0.5s;"></div>
+        <div class="firework" style="left: 60%; animation-delay: 1s;"></div>
+        <div class="firework" style="left: 80%; animation-delay: 1.5s;"></div>
+    </div>
+
+    <div id="question-section">
+        <p></p>
+        <button id="dumb-response">Click For a Surprise!</button>
+        <p id="reminder" style="display: none;">Today is your best friend Suyash's birthday! 🎉🎂 Don’t forget to make it memorable! ❤️</p>
+    </div>
+
+    <div id="image-section">
+        <p>Here’s a special picture of my best friend Suyash:</p>
+        <img src="suyash.jpg" alt="Best friend Suyash" id="friend-image">
+    </div>
+
+    <h1 id="birthday-header">🎉Happy Birthday, Suyash!🎂</h1>
+    <p id="message-1">
+        You are not just my best friend, Suyash, but also someone I deeply admire and cherish. Your kindness, loyalty, and sense of humor make every day brighter.
+    </p>
+    <p id="message-2">
+        Our friendship is one of the most valuable things in my life, and I want it to last forever. Thank you for being such an incredible person, and I hope this birthday brings you all the happiness you deserve.
+    </p>
+
+    <footer>
+        Made with ❤️ by Priyesh
+    </footer>
+
+    <script>
+        const dumbButton = document.getElementById('dumb-response');
+        const reminderText = document.getElementById('reminder');
+        const imageSection = document.getElementById('image-section');
+        const birthdayHeader = document.getElementById('birthday-header');
+        const message1 = document.getElementById('message-1');
+        const message2 = document.getElementById('message-2');
+
+        dumbButton.addEventListener('click', () => {
+            reminderText.style.display = 'block';
+            dumbButton.style.display = 'none';
+            setTimeout(() => {
+                imageSection.style.display = 'block';
+                document.getElementById('friend-image').src = 'suyash.jpg';
+            }, 2000);
+            setTimeout(() => {
+                birthdayHeader.style.display = 'block';
+                message1.style.display = 'block';
+                message2.style.display = 'block';
+            }, 4000);
+        });
+    </script>
+</body>
+</html>
